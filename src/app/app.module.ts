@@ -8,7 +8,6 @@ import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './users/users.component';
 import {TodoListComponent} from './todo-list/todo-list.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
 import {UsersService} from './users.service';
 import {UserComponent} from './users/user/user.component';
 import {NotFoundComponent} from './not-found/not-found.component';
@@ -26,8 +25,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule,
-    MatToolbarModule
+    NoopAnimationsModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]
