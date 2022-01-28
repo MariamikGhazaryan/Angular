@@ -1,0 +1,9 @@
+<div class="userItem" (click)="openToDoList()">
+  <a [routerLink]="['/todoList',user?.id]">
+    {{user.id}} - {{user.name}}
+  </a>,
+  Total todo items: {{user.todoList.length}}
+  <ng-container *ngIf="showToDoList">
+    <app-todo-list [toDoList]="user.todoList"></app-todo-list>
+  </ng-container>
+</div>

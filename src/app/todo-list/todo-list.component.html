@@ -1,0 +1,9 @@
+<h2 style="text-align: center">Todo List</h2>
+<ng-container *ngIf="toDoList && toDoList.length; else elseBlock">
+  <ng-container *ngFor="let item of toDoList">
+    <div class="toDoListItem">{{item.id}} - {{item.title}}</div>
+  </ng-container>
+</ng-container>
+<ng-template #elseBlock>
+  <div style="text-align: center">No items</div>
+</ng-template>
