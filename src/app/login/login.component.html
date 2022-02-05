@@ -1,0 +1,30 @@
+<form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    <input placeholder="Email" type="email" formControlName="email"
+           [ngClass]="{'input-error' : isInvalid('email')}"/>
+
+    <app-error-message [control]="loginFormGroup.controls['email']"
+                       [validationType]="'required'"
+                       [validationMessage]="'Email is required.'"></app-error-message>
+    <app-error-message [control]="loginFormGroup.controls['email']"
+                       [validationType]="'email'"
+                       [validationMessage]="'Email format is incorrect.'"></app-error-message>
+
+    <input placeholder="Password" type="password" formControlName="password"
+           [ngClass]="{'input-error' : isInvalid('password')}"/>
+
+    <app-error-message [control]="loginFormGroup.controls['password']"
+                       [validationType]="'required'"
+                       [validationMessage]="'Password is required.'"></app-error-message>
+    <app-error-message [control]="loginFormGroup.controls['password']"
+                       [validationType]="'minlength'"
+                       [validationMessage]="'Password length must be at least ' +
+                       loginFormGroup.controls['password'].getError('minlength')?.requiredLength +' characters.'"></app-error-message>
+
+    <div *ngIf="wrongCredentials" style="color: red"> Wrong email or password.</div>
+    <button type="submit" [disabled]="loginFormGroup.invalid">
+        <i *ngIf='isLoading' class="fa fa-circle-o-notch fa-spin"></i>
+        Login
+    </button>
+    <button type="button" routerLink="/register">Register</button>
+</form>

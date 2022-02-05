@@ -1,10 +1,13 @@
 <header class="header">
-  <div class="header-left">Angular Homeworks</div>
+    <div class="header-left">Angular Homeworks</div>
 
-  <div class="header-right">
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-    <a routerLink="users" routerLinkActive="active">Users</a>
-    <a routerLink="todoList" routerLinkActive="active">Todo List</a>
-  </div>
+    <div class="header-right">
+        <a routerLink="login" *ngIf="!loggedIn" routerLinkActive="active">Login</a>
+        <a routerLink="register" *ngIf="!loggedIn" routerLinkActive="active">Registration</a>
+        <a routerLink="home" [ngClass]="!loggedIn ? 'disabled' : ''" routerLinkActive="active">Home</a>
+        <a routerLink="users" [ngClass]="!loggedIn ? 'disabled' : ''" routerLinkActive="active">Users</a>
+        <a routerLink="todoList" [ngClass]="!loggedIn ? 'disabled' : ''" routerLinkActive="active">Todo List</a>
+        <a (click)="logOut()" [ngClass]="!loggedIn ? 'disabled' : ''" routerLinkActive="active">Log Out</a>
+    </div>
 
 </header>

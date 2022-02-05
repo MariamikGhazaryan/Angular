@@ -8,27 +8,37 @@ import {HomeComponent} from './home/home.component';
 import {UsersComponent} from './users/users.component';
 import {TodoListComponent} from './todo-list/todo-list.component';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {UsersService} from './users.service';
+import {UsersService} from './services/users.service';
 import {UserComponent} from './users/user/user.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {LoginComponent} from './login/login.component';
+import {RegistrationComponent} from './registration/registration.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {ErrorMessageComponent} from './error-message/error-message.component';
+import {IncludesStringPipe} from './pipes/includes-string.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    UsersComponent,
-    TodoListComponent,
-    UserComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NoopAnimationsModule
-  ],
-  providers: [UsersService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        HomeComponent,
+        UsersComponent,
+        TodoListComponent,
+        UserComponent,
+        NotFoundComponent,
+        LoginComponent,
+        RegistrationComponent,
+        ErrorMessageComponent,
+        IncludesStringPipe
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NoopAnimationsModule,
+        ReactiveFormsModule,
+    ],
+    providers: [UsersService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

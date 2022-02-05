@@ -1,6 +1,8 @@
 <ng-container>
-  <h2 class="title">Users</h2>
-  <div *ngFor="let user of users" class="users">
-    <app-user [user]="user"></app-user>
-  </div>
+    <h2 class="title">Users</h2>
+    <input placeholder="Search User" type="text" [value]="searchedString" (keyup)="searchUser($event)"/>
+    <div *ngFor="let user of users" class="users">
+        <app-user *ngIf="user.firstName | includesString: searchedString"
+                  [user]="user"></app-user>
+    </div>
 </ng-container>

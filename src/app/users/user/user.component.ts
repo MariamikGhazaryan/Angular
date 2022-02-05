@@ -1,26 +1,26 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserModel} from "../../user.model";
+import {UserModel} from "../../models/user.model";
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+    selector: 'app-user',
+    templateUrl: './user.component.html',
+    styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
 
-  @Input()
-  user: UserModel | null = null;
+    @Input()
+    user: UserModel | null = null;
 
-  showToDoList = false;
+    showToDoList = false;
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  openToDoList(): void {
-    this.showToDoList = !this.showToDoList;
-  }
+    openToDoList(): void {
+        this.showToDoList = !this.showToDoList;
+    }
 
 }
