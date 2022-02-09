@@ -15,7 +15,7 @@ import {LoginComponent} from './login/login.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {ErrorMessageComponent} from './error-message/error-message.component';
-import {IncludesStringPipe} from './pipes/includes-string.pipe';
+import {FilterUsersPipe} from './pipes/filter-users.pipe';
 
 @NgModule({
     declarations: [
@@ -29,7 +29,7 @@ import {IncludesStringPipe} from './pipes/includes-string.pipe';
         LoginComponent,
         RegistrationComponent,
         ErrorMessageComponent,
-        IncludesStringPipe
+        FilterUsersPipe
     ],
     imports: [
         BrowserModule,
